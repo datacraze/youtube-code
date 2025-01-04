@@ -50,7 +50,7 @@ with validated_uuids as (
 select is_valid, case when is_valid then cast(value as uuid) end
   from validated_uuids;
 
-
+DROP FUNCTION IF EXISTS public.is_valid_uuid(text);
 
 CREATE OR REPLACE FUNCTION is_valid_uuid(text)
 RETURNS boolean
